@@ -1,1 +1,13 @@
+version: '3'
 
+services:
+  watchdog:
+    container_name: watchdog
+    image: buanet/watchdog:latest
+    hostname: watchdog
+    restart: always
+    environment:
+      - WATCHDOG_CONTAINER_LABEL=all
+      - WATCHTOWER_RUN_ONCE=true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
