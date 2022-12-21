@@ -5,7 +5,7 @@ services:
     container_name: watchtower_1
     image: containrrr/watchtower:latest
     hostname: watchdog
-    restart: never
+    restart: Never
     environment:
       - WATCHTOWER_CONTAINER_LABEL=all
       - WATCHTOWER_RUN_ONCE=true
