@@ -2,12 +2,15 @@ version: '3'
 
 services:
   watchdog:
-    container_name: watchdog
-    image: buanet/watchdog:latest
+    container_name: watchtower
+    image: containrrr/watchtower:latest
     hostname: watchdog
-    restart: always
+    restart: never
     environment:
-      - WATCHDOG_CONTAINER_LABEL=all
+      - WATCHTOWER_CONTAINER_LABEL=all
       - WATCHTOWER_RUN_ONCE=true
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_POLL_INTERVAL=3600
+      - WATCHTOWER_INCLUDE_STOPPED=true
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
