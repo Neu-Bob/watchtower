@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-  watchdog:
-    container_name: watchtower
+  watchtower:
+    container_name: watchtower_1
     image: containrrr/watchtower:latest
     hostname: watchdog
     restart: never
